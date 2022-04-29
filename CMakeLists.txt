@@ -11,3 +11,4 @@ include_directories(./bibipin)
 add_subdirectory(./jerk bubblesort)
 
 target_link_libraries(pigi jerk)
+install(TARGETS pigi RUNTIME DESTINANION bin)
