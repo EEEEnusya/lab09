@@ -1,0 +1,36 @@
+name: sort_bubble
+on: 
+ push
+ 
+jobs:
+ Build:
+  runs-on: ubuntu-latest
+  steps:
+  
+   - name: git clone
+     uses: actions/checkout@v1
+     
+   - name: build bubble_sort
+     run: |
+      cd bublle_sort
+      cmake -B 
+      cmake --build applications --target hello_world
+      ./bubble_sort > sort.txt
+      cat sort.txt
+      cd ..
+      
+   - name: Upload Artifact v1
+     uses: actions/upload-artifact@v3
+     with:
+       name: bubble_sort
+       path: |
+         ./bubble_sort/sort.txt
+         
+   - name: download-artifact v1
+     uses: actions/download-artifact@v3
+     with:
+       name: bubble_sort
+       path: ./artifact
+       
+     
+ 
