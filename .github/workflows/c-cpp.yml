@@ -12,10 +12,10 @@ jobs:
      
    - name: build bubble_sort
      run: |
-      cd bublle_sort
+      cd pigi
       cmake -B 
-      cmake --build applications --target bubble_sort
-      ./bubble_sort > sort.txt
+      cmake --build applications --target pigi
+      ./pigi > sort.txt
       cat sort.txt
       cd ..
       
@@ -24,7 +24,7 @@ jobs:
      with:
        name: bubble_sort
        path: |
-         ./bubble_sort/sort.txt
+         ./pigi/sort.txt
          
    - name: download-artifact v1
      uses: actions/download-artifact@v3
