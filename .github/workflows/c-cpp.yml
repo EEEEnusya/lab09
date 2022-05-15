@@ -14,7 +14,7 @@ jobs:
      run: |
       cd bublle_sort
       cmake -B 
-      cmake --build applications --target hello_world
+      cmake --build applications --target bubble_sort
       ./bubble_sort > sort.txt
       cat sort.txt
       cd ..
